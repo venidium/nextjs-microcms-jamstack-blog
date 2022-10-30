@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { client } from "../libs/client";
 import styles from "../styles/Home.module.scss";
+import Header from '../components/Header';
+ import Footer from '../components/Footer';
 
 //SSG
 export const getStaticProps = async () => {
@@ -13,9 +15,12 @@ export const getStaticProps = async () => {
   };
 };
 
+
+
 export default function Home({ blog }) {
   return (
     <div className={styles.container}>
+      <Header />
       {blog.map((blog) => (
         <li key={blog.id}>
           <Link href={`blog/${blog.id}`}>
@@ -23,6 +28,7 @@ export default function Home({ blog }) {
           </Link>
         </li>
       ))}
+      <Footer />
     </div>
   );
 }

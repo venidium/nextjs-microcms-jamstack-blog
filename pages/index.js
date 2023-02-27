@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
     },
   };
 };
-
+ 
 
 
 export default function Home({ blog }) {
